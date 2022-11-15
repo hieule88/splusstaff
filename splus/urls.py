@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import index
+from .views import menu, trend
 
 urlpatterns = [
-    path("", index),
+    path("", menu, name="menu"),
 ]
