@@ -4,14 +4,28 @@
     <meta charset="UTF-8">
     <title>SplusCart</title>
     <style>
+        body {
+          background-image: url("static/menu.jpg");
+          background-color: #fafafa;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+
         table, th, td, tr {
             border-collapse: collapse;
             border: 1px solid;
             text-align: center;
         }
+
+        #table-cart{
+            margin-top: 400;
+            margin-left: 1000;
+        }
+
     </style>
 </head>
 <body>
+    <div id="table-cart">
     <table>
         <tr> 
             <th>
@@ -50,6 +64,6 @@
             </tr>
         {% endfor %}
     </table>
-    <script src="{% static 'script.js' %}" type="text/javascript"></script>
+    </div>
 </body>
 </html>
