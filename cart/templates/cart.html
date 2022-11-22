@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="origin" name="referrer">
     <title>SplusCart</title>
     <style>
         body {
@@ -18,11 +19,12 @@
         }
 
         #table-cart{
-            margin-top: 400;
-            margin-left: 1000;
+            margin-top: 250;
+            margin-left: 600;
         }
 
     </style>
+    <link rel="alternate" href="" title="HEAD">
 </head>
 <body>
     <div id="table-cart">
@@ -36,9 +38,6 @@
             </th>
             <th>
                 Quantity
-            </th>
-            <th>
-                Price
             </th>
             <th>
                 Floor
@@ -57,9 +56,6 @@
                 </td>
                 <td>
                     {{item.3}}
-                </td>
-                <td>
-                    {{item.4}}
                 </td>
             </tr>
         {% endfor %}

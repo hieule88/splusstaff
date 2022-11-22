@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.decorators import api_view
 from .backend import get_cart_data
+from django.http import HttpResponse
 # Create your views here.
 
 
@@ -18,7 +19,6 @@ def cartview(request):
             title, 
             size,
             quantity,
-            0,
             floor,
         ],
     ]
@@ -26,4 +26,5 @@ def cartview(request):
         "items": cart_items,
     }
 
-    return render(request, "cart.html", context=context)
+    response = render(request, "cart.html", context=context)
+    return response
