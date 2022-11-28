@@ -1,0 +1,135 @@
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta content="origin" name="referrer">
+        <title>SplusCart</title>
+        <style>
+            .iphone {
+                position: absolute;
+                width: 661.96px;
+                height: 745px;
+                left: 491px;
+                top: 0px;
+                background-image: url("{% static 'iPhone.png' %}");
+            }
+
+            /* Cam nguyên chất */
+            .drink-title {
+                position: absolute;
+                width: 379px;
+                height: 91px;
+                left: 180px;
+                top: 686px;
+
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 800;
+                font-size: 40px;
+                line-height: 48px;
+                text-align: center;
+
+                color: #8B181C;
+            }
+
+            /* Cart */
+            .cart {
+                position: absolute;
+                width: 520px;
+                height: 125px;
+                left: 110px;
+                top: 63px;
+            }
+
+            /* drink image*/
+            .drinkimage{
+                position: absolute;
+                width: 313px;
+                height: 432px;
+                left: 197px;
+                top: 268px;
+                
+                background-image: url("{% static drinkimage %}");   
+            }
+
+            .styled-table {
+                border-collapse: collapse;
+                margin: 25px 0;
+                font-size: 1.3em;
+                font-family: sans-serif;
+                min-width: 400px;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .styled-table thead tr {
+                background-color: #8b181c;
+                color: white;
+                text-align: left;
+            }
+
+            .styled-table th,
+            .styled-table td {
+                padding: 12px 15px;
+            }
+
+            .styled-table tbody tr {
+                border-bottom: 1px solid #dddddd;
+            }
+
+            .styled-table tbody tr:nth-of-type(even) {
+                background-color: #f3f3f3;
+            }
+
+            .styled-table tbody tr:last-of-type {
+                border-bottom: 2px solid #8b181c;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="drinkimage"></div>
+        <div class="iphone"></div>
+        <div class="drink-title">{{item.0}}</div>
+        <div class="cart">
+            <table class="styled-table">
+                <thead>
+                    <tr> 
+                        <th>
+                            Title
+                        </th>
+                        <th>
+                            Size
+                        </th>
+                        <th>
+                            Quantity
+                        </th>
+                        <th>
+                            Floor
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            {{item.0}}
+                        </td>
+                        <td>
+                            {{item.1}}
+                        </td>
+                        <td>
+                            {{item.2}}
+                        </td>
+                        <td>
+                            {{item.3}}
+                        </td>
+                        <td>
+                            {{item.4}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

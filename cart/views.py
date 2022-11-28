@@ -4,6 +4,9 @@ from .backend import get_cart_data
 from django.http import HttpResponse
 # Create your views here.
 
+dict_drinkimg = {
+
+}
 
 @api_view(['GET'])
 def cartview(request):
@@ -22,9 +25,11 @@ def cartview(request):
             floor,
         ],
     ]
+    
     context = {
         "items": cart_items,
+        "drinkimage": dict_drinkimg[title],
     }
 
-    response = render(request, "cart.html", context=context)
+    response = render(request, "payment.html", context=context)
     return response

@@ -12,53 +12,78 @@
           background-repeat: no-repeat;
         }
 
-        table, th, td, tr {
-            border-collapse: collapse;
-            border: 1px solid;
-            text-align: center;
-        }
-
         #table-cart{
-            margin-top: 250;
-            margin-left: 600;
+            margin-top: 400;
+            margin-left: 950;
+        }
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1.3em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .styled-table thead tr {
+            background-color: #8b181c;
+            color: white;
+            text-align: left;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
         }
 
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #8b181c;
+        }
     </style>
     <link rel="alternate" href="" title="HEAD">
 </head>
 <body>
     <div id="table-cart">
-    <table>
-        <tr> 
-            <th>
-                Title
-            </th>
-            <th>
-                Size
-            </th>
-            <th>
-                Quantity
-            </th>
-            <th>
-                Floor
-            </th>
-        </tr>
-        {% for item in items %}
-            <tr>
-                <td>
-                    {{item.0}}
-                </td>
-                <td>
-                    {{item.1}}
-                </td>
-                <td>
-                    {{item.2}}
-                </td>
-                <td>
-                    {{item.3}}
-                </td>
+    <table class="styled-table">
+        <thead>
+            <tr> 
+                <th>
+                    Title
+                </th>
+                <th>
+                    Size
+                </th>
+                <th>
+                    Quantity
+                </th>
+                <th>
+                    Floor
+                </th>
             </tr>
-        {% endfor %}
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>
+                        {{item.0}}
+                    </td>
+                    <td>
+                        {{item.1}}
+                    </td>
+                    <td>
+                        {{item.2}}
+                    </td>
+                    <td>
+                        {{item.3}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
     </div>
 </body>
